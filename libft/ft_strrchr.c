@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:01:23 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/21 13:03:41 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:46:17 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *i;
+	char	*i;
 
 	i = (char *)s;
 	while (*s != '\0')
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s != c && s != i)
 		s--;
 	if (*s == c)
-		return ((char*)s);
+		return ((char *)s);
 	else
 		return (0);
 }

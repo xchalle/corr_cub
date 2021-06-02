@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 15:49:40 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/20 15:27:11 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:13:03 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *t;
+	char	*t;
 
 	t = (char *)s;
 	while (n > 0)

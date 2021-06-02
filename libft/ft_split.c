@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:08:05 by xchalle           #+#    #+#             */
-/*   Updated: 2020/12/04 10:19:35 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:51:23 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	**ft_free(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
@@ -73,7 +73,8 @@ static char	**ft_malloc_string(
 			i++;
 			k++;
 		}
-		if (!(tab[o] = malloc(sizeof(char) * (k + 1))))
+		tab[o] = malloc(sizeof(char) * (k + 1));
+		if (!(tab[o]))
 			return (ft_free(tab));
 		o++;
 	}
@@ -87,7 +88,7 @@ static void	ft_assign(int *i, int *n, int *compteur)
 	*compteur = 0;
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		n;
@@ -110,7 +111,8 @@ char		**ft_split(char const *s, char c)
 		if (n > 0)
 			compteur++;
 	}
-	if (!(tab = malloc(sizeof(char *) * (compteur + 1))))
+	tab = malloc(sizeof(char *) * (compteur + 1));
+	if (!(tab))
 		return (NULL);
 	return (ft_malloc_string(tab, s, compteur, c));
 }

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:03:42 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/06 19:13:41 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:09:43 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	trim(long double *di, double *j)
 {
-	int i;
+	int	i;
 
 	i = *di;
 	if (*di < 0)
@@ -27,7 +27,7 @@ void	trim(long double *di, double *j)
 void	check_arg(int argc, char **argv, t_h *h)
 {
 	if (argc == 3 && ft_strncmp(argv[2], "--save", ft_strlen(argv[2]))
-			== 0 && ft_strlen("--save") == ft_strlen(argv[2]))
+		== 0 && ft_strlen("--save") == ft_strlen(argv[2]))
 	{
 		h->save = 1;
 	}

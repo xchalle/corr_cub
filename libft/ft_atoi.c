@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 15:46:08 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/21 12:18:14 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:13:47 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int c;
-	int d;
+	int	i;
+	int	c;
+	int	d;
 
 	i = 0;
 	d = 0;

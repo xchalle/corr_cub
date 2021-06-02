@@ -6,7 +6,7 @@
 #    By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/18 11:47:32 by xchalle           #+#    #+#              #
-#    Updated: 2021/04/17 15:42:07 by user42           ###   ########.fr        #
+#    Updated: 2021/05/25 10:16:08 by xchalle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC = 	libft/get_next_line.c \
 		src/draw.c \
 		src/hitwall.c \
 		src/verif.c \
+		src/verif_int.c \
 		src/check_setting.c \
 		src/check_setting2.c \
 		src/raycast_hor.c \

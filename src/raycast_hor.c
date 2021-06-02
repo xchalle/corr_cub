@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:05:53 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/20 19:12:52 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:12:21 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,21 @@ void	my_mlx_pixel_put(t_h *h, int x, int y, int color)
 		return ;
 	if (color < 0)
 		return ;
-	dst = h->img.addr + (y * h->img.line_length +
-			x * (h->img.bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	dst = h->img.addr + (y * h->img.line_length
+			+ x * (h->img.bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
 }
 
 void	calc_hit_sprite_h(t_h *h)
 {
 	if (h->c.den != 0)
 	{
-		h->c.t = ((h->c.lx1 - h->p.posx) * (h->p.posy - h->r.y) -
-				(h->c.ly1 - h->p.posy) *
-				(h->p.posx - h->r.x)) / h->c.den;
-		h->c.u = -((h->c.lx1 - h->c.lx2) * (h->c.ly1 - h->p.posy) -
-				(h->c.ly1 - h->c.ly2) *
-				(h->c.lx1 - h->p.posx)) / h->c.den;
+		h->c.t = ((h->c.lx1 - h->p.posx) * (h->p.posy - h->r.y)
+				- (h->c.ly1 - h->p.posy)
+				* (h->p.posx - h->r.x)) / h->c.den;
+		h->c.u = -((h->c.lx1 - h->c.lx2) * (h->c.ly1 - h->p.posy)
+				- (h->c.ly1 - h->c.ly2)
+				* (h->c.lx1 - h->p.posx)) / h->c.den;
 		if (h->c.t > 0 && h->c.t < 1 && h->c.u > 0)
 		{
 			h->c.ptx = h->c.lx1 + (h->c.t * (h->c.lx2 - h->c.lx1));
@@ -69,8 +69,8 @@ void	hit_sprite_h(t_h *h)
 		* (CUB / 2);
 	h->c.lx2 = h->c.centerx - cos(h->p.rotangle + M_PI / 2)
 		* (CUB / 2);
-	h->c.den = (h->c.lx1 - h->c.lx2) * (h->p.posy - h->r.y) -
-		(h->c.ly1 - h->c.ly2) * (h->p.posx - h->r.x);
+	h->c.den = (h->c.lx1 - h->c.lx2) * (h->p.posy - h->r.y)
+		- (h->c.ly1 - h->c.ly2) * (h->p.posx - h->r.x);
 	if (h->i < h->sprt)
 		calc_hit_sprite_h(h);
 }
@@ -78,7 +78,7 @@ void	hit_sprite_h(t_h *h)
 double	ft_raycasting_hor2(t_h *h, double posx, double posy)
 {
 	while (h->r.x >= 0 && h->r.x < (CUB * (h->longe + 1))
-			&& h->r.y >= 0 && h->r.y < (CUB * (h->longe + 1)))
+		&& h->r.y >= 0 && h->r.y < (CUB * (h->longe + 1)))
 	{
 		if (ft_hitwall(h, h->r.x, h->r.y) == 2)
 		{

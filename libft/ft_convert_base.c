@@ -6,13 +6,13 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:08:21 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/10 15:34:46 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:11:36 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_char_in_base(char c, char *base)
+int	ft_char_in_base(char c, char *base)
 {
 	int		i;
 
@@ -25,7 +25,7 @@ int				ft_char_in_base(char c, char *base)
 	return (-1);
 }
 
-char			*ft_convert_base(unsigned long long nbr,
+char	*ft_convert_base(unsigned long long nbr,
 		char *base_from, char *base_to)
 {
 	int					size_nbr_base;
@@ -43,7 +43,8 @@ char			*ft_convert_base(unsigned long long nbr,
 		nbr *= -1;
 	}
 	ft_size_nbr_base(nbr, base_to, &size_nbr_base);
-	if (!(nbr_base_to = malloc(sizeof(char) * (size_nbr_base + 1 + is_neg))))
+	nbr_base_to = malloc(sizeof(char) * (size_nbr_base + 1 + is_neg));
+	if (!(nbr_base_to))
 		return (0);
 	i = -1;
 	if (is_neg == 1)

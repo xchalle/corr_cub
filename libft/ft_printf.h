@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:04:35 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 11:48:06 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:22:18 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int		ft_pourcent4(va_list param, t_flag list, char *str);
 int		ft_pourcent2(va_list param, t_flag list, char *str);
 int		ft_pourcent3(va_list param, t_flag list, char *str);
 int		ft_pourcent5(va_list param, t_flag list, char *str);
+void	mal_s(char *s, char *str);
 
 #endif

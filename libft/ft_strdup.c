@@ -6,7 +6,7 @@
 /*   By: xchalle <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/18 19:23:53 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/19 16:05:06 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:49:23 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	if (!(str = malloc(sizeof(char) * (i + 1))))
+	str = malloc(sizeof(char) * (i + 1));
+	if (!(str))
 		return (NULL);
 	i = 0;
 	while (s1[i])

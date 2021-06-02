@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 12:31:04 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 12:08:47 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:20:53 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
 
-typedef struct	s_flag
+typedef struct s_flag
 {
 	int		first;
 	int		second;
@@ -58,7 +58,7 @@ void			*ft_calloc(size_t count, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strjoin_modif(char const *s,
-		char const *s1, char const *s2, int *o);
+					char const *s1, char const *s2, int *o);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(long long n);
@@ -79,11 +79,11 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
-		void (*del)(void *));
+					void (*del)(void *));
 char			*ft_convert_base(unsigned long long nbr,
-		char *base_from, char *base_to);
+					char *base_from, char *base_to);
 void			ft_convert_nbr_base(unsigned long long nbr, char *basei,
-		char *nbr_base_to, int *i);
+					char *nbr_base_to, int *i);
 void			ft_size_nbr_base(long nbr, char *base, int *size);
 int				ft_is_base_valid(char *base);
 int				ft_char_in_base(char c, char *base);

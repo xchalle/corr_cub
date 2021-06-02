@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:05:49 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/25 17:56:07 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:44:49 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	if (!(new = malloc(sizeof(char) * (len + 1))))
+	new = malloc(sizeof(char) * (len + 1));
+	if (!(new))
 		return (0);
 	while ((size_t)i < len)
 	{

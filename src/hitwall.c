@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:04:35 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/20 20:38:31 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:11:07 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	reset_sprite(t_h *h)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < h->sprt)
@@ -41,7 +41,7 @@ void	draw_line(t_h *h, int i, int color)
 	reset_sprite(h);
 }
 
-int		ft_hitwall(t_h *h, double posx, double posy)
+int	ft_hitwall(t_h *h, double posx, double posy)
 {
 	int	x;
 	int	y;

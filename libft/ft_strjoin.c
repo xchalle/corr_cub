@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:06:36 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/23 16:23:47 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:48:50 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	k = 0;
 	l = ft_strlen(s1);
 	m = ft_strlen(s2);
-	if (!(str = malloc(sizeof(char) * (l + m) + 1)))
+	str = malloc(sizeof(char) * (l + m) + 1);
+	if (!(str))
 		return (0);
 	while (s1[i])
 		str[k++] = s1[i++];

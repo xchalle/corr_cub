@@ -6,13 +6,13 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 11:59:02 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/10 15:40:05 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:54:51 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_pourcent5(va_list param, t_flag list, char *str)
+int	ft_pourcent5(va_list param, t_flag list, char *str)
 {
 	int					i;
 	unsigned long long	s;
@@ -36,7 +36,7 @@ int		ft_pourcent5(va_list param, t_flag list, char *str)
 	return (i);
 }
 
-int		ft_pourcent4(va_list param, t_flag list, char *str)
+int	ft_pourcent4(va_list param, t_flag list, char *str)
 {
 	int					i;
 	char				*s;
@@ -64,7 +64,7 @@ int		ft_pourcent4(va_list param, t_flag list, char *str)
 	return (i);
 }
 
-int		ft_pourcent3(va_list param, t_flag list, char *str)
+int	ft_pourcent3(va_list param, t_flag list, char *str)
 {
 	unsigned long long	s;
 	int					i;
@@ -84,7 +84,7 @@ int		ft_pourcent3(va_list param, t_flag list, char *str)
 	return (i);
 }
 
-int		ft_pourcent2(va_list param, t_flag list, char *str)
+int	ft_pourcent2(va_list param, t_flag list, char *str)
 {
 	int				d;
 	int				i;
@@ -110,7 +110,7 @@ int		ft_pourcent2(va_list param, t_flag list, char *str)
 	return (i);
 }
 
-int		ft_pourcent(va_list param, t_flag list, char *str)
+int	ft_pourcent(va_list param, t_flag list, char *str)
 {
 	char				c;
 	int					i;

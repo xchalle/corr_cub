@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 14:37:48 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/25 19:00:00 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:12:43 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void *p;
+	void	*p;
 
-	if (!(p = malloc(count * size)))
+	p = malloc(count * size);
+	if (!(p))
 		return (0);
 	ft_bzero(p, count * size);
 	return (p);

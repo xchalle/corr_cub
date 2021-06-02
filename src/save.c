@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:06:46 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/06 19:16:33 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:13:11 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ void	ft_destroy(t_h *h)
 
 void	write_bmp(t_h *h)
 {
-	int fd;
-	int y;
-	int x;
+	int	fd;
+	int	y;
+	int	x;
 
 	y = h->s.reso[1];
 	fd = open("save.bmp", O_RDWR | O_CREAT, S_IRWXU);
@@ -66,8 +66,8 @@ void	write_bmp(t_h *h)
 		x = 0;
 		while (x < h->s.reso[0])
 		{
-			write(fd, &h->img.addr[(y * h->img.line_length + x *
-						(h->img.bits_per_pixel / 8))], 4);
+			write(fd, &h->img.addr[(y * h->img.line_length + x
+					* (h->img.bits_per_pixel / 8))], 4);
 			x++;
 		}
 		y--;

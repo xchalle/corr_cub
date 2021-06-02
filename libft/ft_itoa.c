@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:08:59 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/22 16:51:30 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:10:00 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	*ft_malade(int *sign, int *len, long *nbr, char *str)
 	return (str);
 }
 
-char		*ft_itoa(long long n)
+char	*ft_itoa(long long n)
 {
 	long		nbr;
 	int			sign;
@@ -60,7 +60,8 @@ char		*ft_itoa(long long n)
 		len++;
 		n = n / 10;
 	}
-	if (!(str = malloc(sizeof(char) * (len + 1))))
+	str = malloc(sizeof(char) * (len + 1));
+	if (!(str))
 		return (0);
 	str[len--] = '\0';
 	while (len >= sign)

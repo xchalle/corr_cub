@@ -38,9 +38,9 @@ void	ft_init_h3(t_h *h)
 
 void	ft_init_h2(t_h *h, int screensizex, int screensizey)
 {
-	if (screensizex < h->s.reso[0])
+	if (screensizex < h->s.reso[0] && h->save == 0)
 		h->s.reso[0] = screensizex;
-	if (screensizey < h->s.reso[1])
+	if (screensizey < h->s.reso[1] && h->save == 0)
 		h->s.reso[1] = screensizey;
 	h->p.posx = h->s.posj * CUB + CUB / 2;
 	h->p.posy = h->s.posi * CUB + CUB / 2;

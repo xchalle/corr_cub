@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_modif.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:06:36 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 12:08:19 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:48:19 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin_modif(char const *s, char const *s1, char const *s2, int *o)
 	k = 0;
 	l = ft_strlen(s);
 	m = ft_strlen(s2);
-	if (!(str = malloc(sizeof(char) * (l + m) + 1)))
+	str = malloc(sizeof(char) * (l + m) + 1);
+	if (!(str))
 		return (0);
 	while (s1[i] && *o != 0)
 		str[k++] = s1[i++];

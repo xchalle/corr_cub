@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:04:12 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/20 15:07:17 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:15:55 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define CROUCH 65507
 # define LEFT_ARROW 65361
 
-typedef	struct	s_r
+typedef struct s_r
 {
 	double	xstep;
 	double	ystep;
@@ -46,7 +46,7 @@ typedef	struct	s_r
 	double	side_y;
 }				t_r;
 
-typedef struct	s_s
+typedef struct s_s
 {
 	char	**array;
 	int		reso[2];
@@ -74,7 +74,7 @@ typedef struct	s_s
 	int		stocki;
 }				t_s;
 
-typedef	struct	s_d
+typedef struct s_d
 {
 	void	*mlx;
 	void	*mlx_win;
@@ -87,7 +87,7 @@ typedef	struct	s_d
 	int		y_img;
 }				t_d;
 
-typedef	struct	s_c
+typedef struct s_c
 {
 	double	lx1;
 	double	ly1;
@@ -104,7 +104,7 @@ typedef	struct	s_c
 	double	base_y;
 }				t_c;
 
-typedef	struct	s_p
+typedef struct s_p
 {
 	double	posx;
 	double	newposx;
@@ -131,19 +131,19 @@ typedef	struct	s_p
 	double	pourcent_s;
 }				t_p;
 
-typedef struct	s_g
+typedef struct s_g
 {
 	char	*stockstr;
 	char	*freestr;
 }				t_g;
 
-typedef struct	s_u
+typedef struct s_u
 {
 	double	d;
 	double	p;
 }				t_u;
 
-typedef struct	s_h
+typedef struct s_h
 {
 	t_d		img;
 	t_d		img2;
@@ -183,7 +183,7 @@ void			summon_ea(char *str, t_s *s, int i);
 void			summon_s(char *str, t_s *s, int i);
 void			summon_f(char *str, t_h *h, int i);
 void			summon_c(char *str, t_h *h, int i);
-void			summon_r(char *str, t_s *s, int i);
+void			summon_r(char *str, t_h *h, int i);
 void			summon_map(char *str, int fd, t_h *h);
 int				summon_bin(char *str, t_h *h);
 void			switch_setting(char *str, t_h *h);
@@ -211,7 +211,7 @@ void			check_map2_1(t_h *h);
 void			check_map3(t_h *h);
 int				check_verif(t_h *h);
 void			check_map2(t_h *h);
-void			write_bmp();
+void			write_bmp(t_h *h);
 int				ft_charset_tot(char c);
 int				ft_charset(char c);
 int				charset_str(char *str);
@@ -240,5 +240,9 @@ void			check_color_range(t_h *h);
 void			trim(long double *di, double *j);
 void			check_line(char *str, t_h *h, int i);
 int				chars(char c);
+void			error_struct_2(t_h *h, int i, char *str, int e);
+void			error_struct_2bis(t_h *h, char *str, int e);
+void			check_int_reso(t_h *h);
+int				count_str(char *str, int i, int j);
 
 #endif

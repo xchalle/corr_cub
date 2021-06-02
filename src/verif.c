@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:04:43 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/17 17:11:41 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:14:35 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	check_verif2(t_h *h)
 	}
 }
 
-int		check_verif(t_h *h)
+int	check_verif(t_h *h)
 {
 	check_verif2(h);
 	check_verif3(h);
@@ -82,7 +82,7 @@ int		check_verif(t_h *h)
 	return (0);
 }
 
-int		check_verif_soft(t_h *h)
+int	check_verif_soft(t_h *h)
 {
 	if (h->s.floor_verif == 0)
 		return (1);
@@ -105,7 +105,7 @@ int		check_verif_soft(t_h *h)
 
 void	check_color_range(t_h *h)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 3)
@@ -129,4 +129,5 @@ void	check_color_range(t_h *h)
 		}
 		i++;
 	}
+	check_int_reso(h);
 }

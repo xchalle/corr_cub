@@ -6,15 +6,15 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:04:02 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/06 19:13:50 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:10:19 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-int		ft_fln(t_h *h, int j)
+int	ft_fln(t_h *h, int j)
 {
-	int i;
+	int	i;
 
 	i = h->s.max - 1;
 	while (h->s.array[j][i] == ' ')
@@ -22,9 +22,9 @@ int		ft_fln(t_h *h, int j)
 	return (i);
 }
 
-int		ft_flm(t_h *h, int j)
+int	ft_flm(t_h *h, int j)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (h->s.array[j][i] == ' ')

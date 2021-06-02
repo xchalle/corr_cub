@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:19:58 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/27 10:53:05 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:45:37 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_is_inset(char s, char const *set)
 	return (0);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	int		m;
@@ -42,7 +42,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	k = ft_strlen(s1);
 	while (k > m && ft_is_inset(s1[k - 1], set))
 		k--;
-	if (!(s2 = malloc(sizeof(char) * (k - m + 1))))
+	s2 = malloc(sizeof(char) * (k - m + 1));
+	if (!(s2))
 		return (NULL);
 	while (m < k)
 		s2[i++] = s1[m++];

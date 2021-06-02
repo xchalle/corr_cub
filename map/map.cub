@@ -1,11 +1,11 @@
-   SO texture/u.xpm
-       NO texture/u.xpm
-        EA     texture/u.xpm
-     S      texture/y.xpm
-    WE     texture/u.xpm
-     R    1000    800
-          F 100,,,,,,,,,,,,       100,      100
-C ,,,,,,,,,,,   100,             0      ,        30
+     R    2000 1000
+   SO texture/wall.xpm
+       NO texture/wall.xpm
+        EA     texture/wall.xpm
+     S      texture/sprite1.xpm
+    WE     texture/wall.xpm
+C ,,,,,,,,,,,   100,             0      ,30
+          F 100,100,100
 
 
 

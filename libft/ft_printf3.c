@@ -6,20 +6,20 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 12:26:05 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 12:07:46 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 12:15:36 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_find_point(char *str)
+int	ft_find_point(char *str)
 {
 	if (str[0] == '*')
 		return (0);
 	return (1);
 }
 
-int		ft_second(int second, long long u)
+int	ft_second(int second, long long u)
 {
 	if (u < 0)
 		second++;
@@ -28,7 +28,7 @@ int		ft_second(int second, long long u)
 
 void	ft_atoooi(char *s, t_flag *list, char *str, long long nbr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && in_charset(s[i]) == 0)
@@ -41,8 +41,8 @@ void	ft_atoooi(char *s, t_flag *list, char *str, long long nbr)
 		if (list->second < 0)
 			list->second = ft_nbrlen_unsigned(nbr);
 	}
-	else if (list->c == 'X' || list->c == 'x' ||
-			list->c == 's' || list->c == 'p' || list->c == '%')
+	else if (list->c == 'X' || list->c == 'x'
+		|| list->c == 's' || list->c == 'p' || list->c == '%')
 	{
 		list->first = 0;
 		list->second = ft_strlen(str);
@@ -68,8 +68,8 @@ char	*ft_replace(char *str, va_list param)
 	int		o;
 
 	ft_replace_summons(str, &o, &j, &i);
-	if (!(s = malloc(sizeof(char) * (ft_strlen(str) + 1))))
-		return (NULL);
+	s = NULL;
+	mal_s(s, str);
 	while (str[i])
 	{
 		if (str[i] == '*')

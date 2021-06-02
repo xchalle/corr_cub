@@ -6,22 +6,22 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 15:44:32 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/17 17:31:50 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:14:10 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-int		chars(char c)
+int	chars(char c)
 {
 	if (c == '1' || c == '2' || c == '0')
 		return (1);
 	return (0);
 }
 
-int		summon_bin(char *str, t_h *h)
+int	summon_bin(char *str, t_h *h)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] == ' ')

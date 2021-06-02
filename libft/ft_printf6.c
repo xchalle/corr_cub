@@ -6,17 +6,17 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 11:59:22 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/10 15:41:50 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:54:16 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printer_str(t_flag list, char *s)
+int	ft_printer_str(t_flag list, char *s)
 {
-	int i;
-	int max;
-	int compt;
+	int	i;
+	int	max;
+	int	compt;
 
 	compt = 0;
 	i = 0;
@@ -36,9 +36,9 @@ int		ft_printer_str(t_flag list, char *s)
 	return (compt);
 }
 
-int		ft_printer_adr2(char *u, t_flag *list, int *max, unsigned long long nbr)
+int	ft_printer_adr2(char *u, t_flag *list, int *max, unsigned long long nbr)
 {
-	int compt;
+	int	compt;
 
 	compt = 0;
 	if (ft_strlen(u) < (size_t)list->second || (list->second == 0 && nbr == 0))
@@ -57,11 +57,11 @@ int		ft_printer_adr2(char *u, t_flag *list, int *max, unsigned long long nbr)
 	return (compt);
 }
 
-int		ft_printer_adr(t_flag list, char *u, unsigned long long nbr)
+int	ft_printer_adr(t_flag list, char *u, unsigned long long nbr)
 {
-	int compt;
-	int second;
-	int max;
+	int	compt;
+	int	second;
+	int	max;
 
 	max = ft_strlen(u);
 	second = list.second;
@@ -76,9 +76,9 @@ int		ft_printer_adr(t_flag list, char *u, unsigned long long nbr)
 	return (compt);
 }
 
-int		ft_printer_nbr2(long long *u, t_flag *list, int *max, int *i)
+int	ft_printer_nbr2(long long *u, t_flag *list, int *max, int *i)
 {
-	int compt;
+	int	compt;
 
 	compt = 0;
 	*i = list->second;
@@ -101,11 +101,11 @@ int		ft_printer_nbr2(long long *u, t_flag *list, int *max, int *i)
 	return (compt);
 }
 
-int		ft_printer_nbr(t_flag list, long long u)
+int	ft_printer_nbr(t_flag list, long long u)
 {
-	int i;
-	int compt;
-	int max;
+	int	i;
+	int	compt;
+	int	max;
 
 	compt = ft_printer_nbr2(&u, &list, &max, &i);
 	while (list.second > ft_nbrlen_unsigned(u))

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 17:46:16 by xchalle           #+#    #+#             */
-/*   Updated: 2020/12/11 16:45:33 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:23:14 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_swap_gnl(char *dest, char *src)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -35,9 +35,9 @@ char	*ft_swap_gnl(char *dest, char *src)
 	return (dest);
 }
 
-int		ft_strlen_gnl(char *s, char c)
+int	ft_strlen_gnl(char *s, char c)
 {
-	int i;
+	int	i;
 
 	if (!s)
 		return (0);
@@ -47,9 +47,9 @@ int		ft_strlen_gnl(char *s, char c)
 	return (i);
 }
 
-int		ft_check(char *keeper, char c, int size)
+int	ft_check(char *keeper, char c, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (keeper[i] && i < size)
@@ -71,7 +71,8 @@ char	*ft_empty_string(char *s1, char *s2, char c, int m)
 	k = 0;
 	if (!s1)
 	{
-		if (!(str = malloc(sizeof(char) * (m + 1))))
+		str = malloc(sizeof(char) * (m + 1));
+		if (!(str))
 			return (NULL);
 		while (s2[i] && s2[i] != c)
 			str[k++] = s2[i++];
@@ -97,7 +98,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2, char c)
 	if (!s1)
 		return (ft_empty_string(s1, s2, c, m));
 	l = ft_strlen_gnl(s1, c);
-	if (!(str = malloc(sizeof(char) * (l + m) + 1)))
+	str = malloc(sizeof(char) * (l + m) + 1);
+	if (!(str))
 		return (0);
 	while (s1[i] && s1[i] != c)
 		str[k++] = s1[i++];

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:12:16 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/19 16:53:35 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:51:47 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long i;
+	long	i;
 
 	i = n;
 	if (i < 0)

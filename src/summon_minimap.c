@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:07:07 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/06 19:16:44 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:13:39 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,13 @@ void	parsing_map(t_h *h, int fd, char *str, int i)
 
 void	alloc_array(t_h *h, int i)
 {
-	if (!(h->s.array = malloc(sizeof(char *) * (i + 1))))
+	h->s.array = malloc(sizeof(char *) * (i + 1));
+	if (!(h->s.array))
 		return ;
 	while (h->s.i <= i)
 	{
-		if (!(h->s.array[h->s.i] = malloc(sizeof(char) * (h->s.max + 1))))
+		h->s.array[h->s.i] = malloc(sizeof(char) * (h->s.max + 1));
+		if (!(h->s.array[h->s.i]))
 			return ;
 		h->s.i++;
 	}

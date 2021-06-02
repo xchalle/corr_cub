@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:04:28 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/21 13:31:50 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:10:39 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,25 +42,25 @@ void	sort_sprite(t_h *h)
 void	draw_wall(t_h *h, int i, int j, long double di)
 {
 	if (h->p.bool_vert == 1 && (h->p.fov > (M_PI / 2)
-				&& h->p.fov < (1.5 * M_PI)))
+			&& h->p.fov < (1.5 * M_PI)))
 		my_mlx_pixel_put(h, i, di, my_mlx_pixel_find(&h->img3,
-					(h->img3.x_img * (h->pourcent / CUB)),
-					(h->img3.y_img * (j / h->dist_max))));
-	if (h->p.bool_vert == 1 && (h->p.fov <= (M_PI / 2) ||
-				h->p.fov >= (1.5 * M_PI)))
+				(h->img3.x_img * (h->pourcent / CUB)),
+				(h->img3.y_img * (j / h->dist_max))));
+	if (h->p.bool_vert == 1 && (h->p.fov <= (M_PI / 2)
+			|| h->p.fov >= (1.5 * M_PI)))
 		my_mlx_pixel_put(h, i, di, my_mlx_pixel_find(&h->img2,
-					(h->img2.x_img * (h->pourcent / CUB)),
-					(h->img2.y_img * (j / h->dist_max))));
-	if (h->p.bool_vert == 0 && (h->p.fov > (M_PI) ||
-				h->p.fov < 0))
+				(h->img2.x_img * (h->pourcent / CUB)),
+				(h->img2.y_img * (j / h->dist_max))));
+	if (h->p.bool_vert == 0 && (h->p.fov > (M_PI)
+			|| h->p.fov < 0))
 		my_mlx_pixel_put(h, i, di, my_mlx_pixel_find(&h->img4,
-					(h->img4.x_img * (h->pourcent / CUB)),
-					(h->img4.y_img * (j / h->dist_max))));
+				(h->img4.x_img * (h->pourcent / CUB)),
+				(h->img4.y_img * (j / h->dist_max))));
 	if (h->p.bool_vert == 0 && (h->p.fov >= 0
-				&& h->p.fov <= M_PI))
+			&& h->p.fov <= M_PI))
 		my_mlx_pixel_put(h, i, di, my_mlx_pixel_find(&h->img5,
-					(h->img5.x_img * (h->pourcent / CUB)),
-					(h->img5.y_img * (j / h->dist_max))));
+				(h->img5.x_img * (h->pourcent / CUB)),
+				(h->img5.y_img * (j / h->dist_max))));
 }
 
 void	draw_sprite2(t_h *h, int i, int u, int k)
@@ -82,8 +82,8 @@ void	draw_sprite2(t_h *h, int i, int u, int k)
 		if (di > h->s.reso[1])
 			break ;
 		my_mlx_pixel_put(h, i, di, my_mlx_pixel_find(&h->img6,
-			(h->img6.x_img * h->u[u].p / CUB),
-			(h->img6.y_img * (k / h->u[u].d * 1))));
+				(h->img6.x_img * h->u[u].p / CUB),
+				(h->img6.y_img * (k / h->u[u].d * 1))));
 		k++;
 		di++;
 	}
@@ -114,8 +114,8 @@ void	draw_line2(t_h *h, int i, double dist_max)
 	wall_size = dist_max;
 	dist_max = dist_max * cos(h->p.rotangle - h->p.fov);
 	if (dist_max != 0)
-		dist_max = -(8 * CUB / dist_max) *
-			((h->s.reso[0] / 2) / tan(FOV / 2));
+		dist_max = -(8 * CUB / dist_max)
+			* ((h->s.reso[0] / 2) / tan(FOV / 2));
 	di = ((h->s.reso[1] - dist_max)) / h->p.crouch;
 	h->dist_max = dist_max;
 	j = 0;

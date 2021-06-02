@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_modif.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 15:46:08 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 11:57:13 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:13:25 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	ft_atoi2(const char *str, t_flag *list, int *i, int c)
 		list->first *= -1;
 }
 
-int		ft_atoi_modified(const char *str, t_flag *list)
+int	ft_atoi_modified(const char *str, t_flag *list)
 {
-	int i;
-	int c;
+	int	i;
+	int	c;
 
 	c = 0;
 	ft_atoi2(str, list, &i, c);

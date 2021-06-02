@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 16:00:54 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/19 16:37:18 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:49:53 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	while (*s != c && *s)
 		s++;
 	if (*s == c)
-		return ((char*)s);
+		return ((char *)s);
 	else
 		return (0);
 }

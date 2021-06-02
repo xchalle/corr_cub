@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:04:56 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/10 15:32:11 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:52:27 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_reset(t_flag *list)
 	list->c = 0;
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		i;
 	t_flag	list;
@@ -58,9 +58,9 @@ int		ft_printf(const char *str, ...)
 	return (i);
 }
 
-int		ft_printer_char(t_flag list, long long u)
+int	ft_printer_char(t_flag list, long long u)
 {
-	int compt;
+	int	compt;
 
 	compt = 0;
 	while (list.first > 1)

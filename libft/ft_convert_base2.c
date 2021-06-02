@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:08:45 by xchalle           #+#    #+#             */
-/*   Updated: 2020/12/16 12:08:46 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:12:07 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_convert_nbr_base(unsigned long long nbr,
 	nbr_base_to[*i] = base[nb % base_size];
 }
 
-int		ft_is_base_valid(char *base)
+int	ft_is_base_valid(char *base)
 {
 	int		i;
 	int		j;
@@ -54,8 +54,8 @@ int		ft_is_base_valid(char *base)
 	while (base[++i] != '\0')
 	{
 		if (base[i] == '+' || base[i] == '-' || base[i] == '\t'
-				|| base[i] == '\n' || base[i] == '\v'
-				|| base[i] == '\f' || base[i] == '\r' || base[i] == ' ')
+			|| base[i] == '\n' || base[i] == '\v'
+			|| base[i] == '\f' || base[i] == '\r' || base[i] == ' ')
 			return (0);
 		j = -1;
 		while (base[++j] != '\0')

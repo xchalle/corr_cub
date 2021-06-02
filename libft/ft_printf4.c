@@ -6,16 +6,23 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 11:58:46 by xchalle           #+#    #+#             */
-/*   Updated: 2021/01/18 11:47:52 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 12:06:39 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_afteresp_nbr(t_flag list, long long d)
+void	mal_s(char *s, char *str)
 {
-	int i;
-	int max;
+	s = malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!(s))
+		return ;
+}
+
+int	ft_afteresp_nbr(t_flag list, long long d)
+{
+	int	i;
+	int	max;
 
 	max = ft_nbrlen(d);
 	if (list.second > ft_nbrlen_unsigned(d) || (list.second == 0 && d == 0))
@@ -35,10 +42,10 @@ int		ft_afteresp_nbr(t_flag list, long long d)
 	return (i);
 }
 
-int		ft_afteresp_str(t_flag list, char *s)
+int	ft_afteresp_str(t_flag list, char *s)
 {
-	int i;
-	int max;
+	int	i;
+	int	max;
 
 	i = 0;
 	max = list.second;
@@ -56,10 +63,10 @@ int		ft_afteresp_str(t_flag list, char *s)
 	return (i);
 }
 
-int		ft_afteresp_adr(t_flag list, char *s, unsigned long long u)
+int	ft_afteresp_adr(t_flag list, char *s, unsigned long long u)
 {
-	int i;
-	int max;
+	int	i;
+	int	max;
 
 	i = 0;
 	max = ft_strlen(s);
@@ -79,9 +86,9 @@ int		ft_afteresp_adr(t_flag list, char *s, unsigned long long u)
 	return (i);
 }
 
-int		ft_afteresp_char(t_flag list)
+int	ft_afteresp_char(t_flag list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (list.first < 0)

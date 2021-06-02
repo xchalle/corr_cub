@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:10:36 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/23 17:53:07 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:09:26 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *tmp;
-	t_list *t2;
+	t_list	*tmp;
+	t_list	*t2;
 
 	if (lst == NULL)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 15:51:24 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/20 22:13:49 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:06:40 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char *d;
-	unsigned char *s;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dst;

@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:05:28 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/17 17:35:51 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:11:46 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	switch_setting(char *str, t_h *h)
 	summon_s(str, &h->s, i);
 	summon_f(str, h, i);
 	summon_c(str, h, i);
-	summon_r(str, &h->s, i);
+	summon_r(str, h, i);
 }
 
 void	ft_free_struct(t_h *h)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (h->map_verif == 1)
@@ -109,7 +109,7 @@ void	main_init(t_h *h)
 	h->count = 0;
 }
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_h	h;
 
@@ -120,7 +120,8 @@ int		main(int argc, char **argv)
 	check_map(&h);
 	check_map2(&h);
 	check_map2_1(&h);
-	if (!(h.u = malloc(sizeof(t_u) * h.sprt + 1)))
+	h.u = malloc(sizeof(t_u) * h.sprt + 1);
+	if (!(h.u))
 	{
 		ft_free_struct(&h);
 		write(2, "Error\nMalloc sprite failed\n", 27);

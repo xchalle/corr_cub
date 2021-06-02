@@ -6,7 +6,7 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 12:08:58 by xchalle           #+#    #+#             */
-/*   Updated: 2020/11/23 12:17:58 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 11:07:15 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*tmp;
 
-	if (!(tmp = malloc(sizeof(t_list))))
+	tmp = malloc(sizeof(t_list));
+	if (!(tmp))
 		return (0);
 	tmp->content = content;
 	tmp->next = NULL;

@@ -6,13 +6,13 @@
 /*   By: xchalle <xchalle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:06:07 by xchalle           #+#    #+#             */
-/*   Updated: 2021/04/20 15:31:52 by xchalle          ###   ########.fr       */
+/*   Updated: 2021/05/25 10:12:42 by xchalle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/cub3d.h"
 
-int		my_mlx_pixel_find(t_d *d, int x, int y)
+int	my_mlx_pixel_find(t_d *d, int x, int y)
 {
 	char	*dst;
 
@@ -20,9 +20,9 @@ int		my_mlx_pixel_find(t_d *d, int x, int y)
 	{
 		return (0);
 	}
-	dst = d->addr + (y * d->line_length +
-			x * (d->bits_per_pixel / 8));
-	return (*(unsigned int*)dst);
+	dst = d->addr + (y * d->line_length
+			+ x * (d->bits_per_pixel / 8));
+	return (*(unsigned int *)dst);
 }
 
 void	calc_hit_sprite_v(t_h *h)
@@ -30,11 +30,11 @@ void	calc_hit_sprite_v(t_h *h)
 	if (h->c.den != 0)
 	{
 		h->c.t = ((h->c.lx1 - h->p.posx) * (h->p.posy - h->r.y)
-				- (h->c.ly1 - h->p.posy) *
-				(h->p.posx - h->r.x)) / h->c.den;
+				- (h->c.ly1 - h->p.posy)
+				* (h->p.posx - h->r.x)) / h->c.den;
 		h->c.u = -((h->c.lx1 - h->c.lx2) * (h->c.ly1 - h->p.posy)
-				- (h->c.ly1 - h->c.ly2) *
-				(h->c.lx1 - h->p.posx)) / h->c.den;
+				- (h->c.ly1 - h->c.ly2)
+				* (h->c.lx1 - h->p.posx)) / h->c.den;
 		if (h->c.t > 0 && h->c.t < 1 && h->c.u > 0)
 		{
 			h->c.ptx = h->p.posx + h->c.u * (h->r.x - h->p.posx);
@@ -69,16 +69,16 @@ void	hit_sprite_v(t_h *h)
 		* (CUB / 2);
 	h->c.lx2 = h->c.centerx - cos(h->p.rotangle + M_PI / 2)
 		* (CUB / 2);
-	h->c.den = (h->c.lx1 - h->c.lx2) * (h->p.posy - h->r.y) -
-		(h->c.ly1 - h->c.ly2) * (h->p.posx - h->r.x);
+	h->c.den = (h->c.lx1 - h->c.lx2) * (h->p.posy - h->r.y)
+		- (h->c.ly1 - h->c.ly2) * (h->p.posx - h->r.x);
 	if (h->i < h->sprt)
 		calc_hit_sprite_v(h);
 }
 
 double	ft_raycasting_ver2(t_h *h, double posx, double posy)
 {
-	while (h->r.x >= 0 && h->r.x < (CUB * h->longe) &&
-			h->r.y >= 0 && h->r.y < (CUB * h->longe))
+	while (h->r.x >= 0 && h->r.x < (CUB * h->longe)
+		&& h->r.y >= 0 && h->r.y < (CUB * h->longe))
 	{
 		if (ft_hitwall(h, h->r.x, h->r.y) == 2)
 		{
